@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+            font-size: 18px;
+        }
+        body {
+            margin: 4vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .sidebar {
+            width: 25%;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 15px;
+            height: 92vh;
+            box-shadow: 0px 0px 3px gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .fa-circle {
+            color: orangered;
+        }
+        .searchBar {
+            width: 100%;
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input {
+            border: none;
+            outline: none;
+            background: none;
+        }
+        .glass:hover {
+            color: orangered;
+            cursor: pointer;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-brands {
+            font-size: 25px;
+            margin: 0 10px;
+            color: #333;
+            cursor: pointer;
+        }
+        .fa-brands:hover {
+            color: orangered;
+        }
+        .data {
+            width: 73%;
+            border-radius: 3px;
+            height: 92vh;
+            overflow-y: auto;
+        }
+        .top {
+            height: 60px;
+            border-radius: 3px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+        }
+        .header {
+            height: 200px;
+            border-radius: 3px;
+            background-color: #333;
+            margin: 3vh 0px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header p {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+        }
+        #root {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .box {
+            margin: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .img-box {
+            width: 100%;
+            height: 176px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .images {
+            max-height: 90%;
+            max-width: 90%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .bottom {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 110px;
+        }
+        h2 {
+            font-size: 20px;
+            color: orangered;
+        }
+        button {
+            width: 100%;
+            position: relative;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            padding: 7px 25px;
+            cursor: pointer;
+            color: white;
+        }
+        button:hover {
+            background-color: orangered;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidehead">
+                <div class="dots">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle" style="color: #333;"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <div class="return">
+                    <a href="/home.html"><button>Quay Lại</button></a>
+                   </div>
+                <hr style="margin: 15px 0; border: 1px solid #eee">
+            </div>
+            <div class="sidebody" style="height: 69vh;">
+                <div class="searchBar">
+                    <input placeholder="Search..." id="searchBar" name="searchBar" type="text">
+                    <i class="fa-solid fa-magnifying-glass glass" id="btn"></i>
+                </div>
+            </div>
+            <div class="sidefoot">
+                <hr style="margin: 15px 0; border: 1px solid #eee">
+                <div class="social-icons">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-square-github"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="data">
+            <div class="top">
+                <p>+84877362847</p>
+                <p>PlusShop@gmail.com</p>
+            </div>
+            <div class="header">
+                <p>Mua mọi thứ trực tuyến</p>
+            </div>
+            <div class="body">
+                <div id="root"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const product = [
+            {
+                id: 0,
+                image: '/images/n5.jpeg',
+                title: 'Giày Nike Air Force 1 Chanel Chất 2023 Likeauth',
+                price: 870.000,
+            },
+            {
+                id: 1,
+                image: '/images/n6.jpg',
+                title: 'Giày Nike Air Force 1 Gucci Sơn Tùng Bản 2023 Likeauth',
+                price: 890.000,
+            },
+            {
+                id: 2,
+                image: '/images/n7.webp',
+                title: 'Giày Nike Air Jordan 1 Low ‘Bred Toe’ Mũi Đỏ Like Autha',
+                price: 800.000,
+            },
+            {
+                id: 3,
+                image: '/images/n7.webp',
+                title: 'Giày Nike Air Jordan 1 Low Panda Like Auths',
+                price: 820.000,
+            },
+            {
+                id: 4,
+                image: '/images/ni2.webp',
+                title: 'Giày Nike Air Force 1 Low ’07 LV8 ‘Panda’ Siêu Cấp',
+                price: 900.000,
+            },
+            {
+                id: 5,
+                image: '/images/ni3.jpg',
+                title: 'Giày Nike Air Force 1 Gucci Sơn Tùng Bản 2024Likeauth',
+                price: 700.000,
+            },
+            {
+                id: 6,
+                image: '/images/ni4.jpg',
+                title: 'Giày Nike Air Jordan 1 Low ‘Bred Toe’ Mũi Đen Like Authh',
+                price: 600.000,
+            },
+            {
+                id: 7,
+                image: '/images/a5.jpeg',
+                title: 'Giày Nike Air Jordan 1 Low ‘Bred Toe’ Mũi Đỏ Like Authh',
+                price: 100,
+            },
+            {
+                id: 8,
+                image: '/images/a6.jpeg',
+                title: 'Giày Adidas Yeezy 350 V2 Sesame Replica™ 1:1',
+                price: 300.000,
+            },
+            {
+                id: 9,
+                image: '/images/a7.jpg',
+                title: 'Giày Adidas Alphabounce Instinct M Core Black',
+                price: 500.000,
+            },
+            {
+                id: 10,
+                image: '/images/a1.webp',
+                title: 'Giày Adidas Stan Smith gót xanh lá Rep 1:1',
+                price: 400.000,
+            },
+            {
+                id: 11,
+                image: '/images/a2.jpg',
+                title: 'Giày Adidas Superstar Adifom Đen Siêu Cấp',
+                price: 440.000,
+            },
+            {
+                id: 12,
+                image: '/images/a3.webp',
+                title: 'Giày Adidas Originals Forum 84 Low OG Noble Green Siêu Cấp',
+                price: 560.000,
+            },
+            {
+                id: 13,
+                image: '/images/m5.jpg',
+                title: 'Giày Adidas Forum 84 Low ADV Shoes ‘Cloud White Blue Bird’',
+                price: 375.000,
+            },
+            {
+                id: 14,
+                image: '/images/m6.jpg',
+                title: 'Giày Chạy Bộ Adidas EQT Bost 2023 Đỏ Đen LikeAuth',
+                price: 950.000,
+            },
+            {
+                id: 15,
+                image: '/images/m7.jpg',
+                title: 'Giày MLB Korea Boston Đế EVa Nam Nữ Rep™ 1:1',
+                price: 300.000,
+            },
+            {
+                id: 16,
+                image: '/images/m1.jpg',
+                title: 'Giày Sneaker MLB LA Big Ball Chunky A Nam Nữ Rep™ 1:1',
+                price: 750.000
+            },
+            {
+                id: 17,
+                image: '/images/m2.jpg',
+                title: 'Giày MLB Bigball Chunky Mono Heel Boston Red Sox',
+                price: 100,
+            },
+            {
+                id: 18,
+                image: '/images/m3.jpg',
+                title: 'MLB LINER LA Siêu Cấp',
+                price: 475.000,
+            },
+            {
+                id: 19,
+                image: '/images/m4.jpeg',
+                title: 'Giày MLB Chunky Liner la Cao Cấp',
+                price:900.000,
+            },
+            
+            
+        ];
+
+ 
+    </script>
+    <script src="search.js"></script>
+</body>
+
+</html>

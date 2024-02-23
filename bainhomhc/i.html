@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Xử lý Ajax và cập nhật giao diện người dùng
+        $(document).ready(function() {
+            $("#load-news-btn").click(function() {
+                // Gửi yêu cầu tới máy chủ
+                $.ajax({
+                    url: "server_endpoint_url_or_file_path",
+                    method: "GET",
+                    dataType: "json", // Hoặc "xml" nếu máy chủ trả về dữ liệu XML
+                    success: function(data) {
+                        // Xử lý dữ liệu và cập nhật giao diện
+                        displayNews(data);
+                    },
+                    error: function() {
+                        $("#news-container").html("Không thể tải dữ liệu tin tức mới.");
+                    }
+                });
+            });
+
+            // Hàm hiển thị danh sách tin tức mới
+            function displayNews(data) {
+                var newsHtml = "";
+                // Lặp qua dữ liệu tin tức và thêm vào biến HTML
+                for (var i = 0; i < data.length; i++) {
+                    var newsItem = data[i];
+                    newsHtml += "<div class='news-item'>";
+                    newsHtml += "<h2>" + newsItem.title + "</h2>";
+                    newsHtml += "<p>" + newsItem.content + "</p>";
+                    newsHtml += "</div>";
+                }
+                // Cập nhật giao diện với danh sách tin tức mới
+                $("#news-container").html(newsHtml);
+            }
+        });
+    </script>
+    <style>
+        .news-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="load-news-btn">Tải tin tức mới</button>
+    <div id="news-container"></div>
+</body>
+</html>

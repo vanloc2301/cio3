@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    
+    <link rel="stylesheet" href="admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Dashboard Nhóm 3</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Bảng điều khiển</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Quản lí đơn hàng</span>
+				</a>
+			</li>
+			<li>
+
+				<a href="qlsp/custommer.html" >
+                    <i class='bx bxl-product-hunt'></i>
+					<span class="text">Quản lí sản phẩm</span>
+				</a>
+			</li>
+			<li>
+				<a href="qlnv/model/index1.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Quản lí nhân viên</span>
+				</a>
+			</li>
+            <li>
+                <a href="qlkh/kh.html">
+                    <i class='bx bxs-user-detail'></i>
+					<span class="text">Quản lí khách hàng</span>
+				</a>
+			</li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-time'></i>
+                    <span class="text">Báo cáo danh thu</span>
+                </a>
+            </li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Cài đặt</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Đăng xuất</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Danh mục</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="images/logo.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Bảng điều khiển</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Bảng điều khiển</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+                            <a class="active" href="#">Trang chủ</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Tải xuống PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>500</h3>
+						<p>Đơn hàng mới</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Người ghé qua shop</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>$2543</h3>
+						<p>Tổng sales</p>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Đơn đặt hàng gần đây</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date Order</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="images/us1.jpeg">
+									<p>Trần Văn A</p>
+								</td>
+								<td>05-4-2023</td>
+								<td><span class="status completed">Hoàn Thành</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/us2.jpeg">
+									<p>Nguyễn Thị C</p>
+								</td>
+								<td>07-4-2023</td>
+								<td><span class="status pending">Chưa xử lý</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/us3.jpeg">
+									<p>Phạm Văn D</p>
+								</td>
+								<td>09-4-2023</td>
+								<td><span class="status process">Đang xử lí</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/us4.jpeg">
+									<p>Bùi Xuân E</p>
+								</td>
+								<td>11-4-2023</td>
+								<td><span class="status pending">Chưa xử lí</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="images/us5.jpeg">
+									<p>Nguyễn Phú P</p>
+								</td>
+								<td>23-4-2023</td>
+								<td><span class="status completed">Hoàn Thành</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Quá trình xử lí</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Hoàn Thành</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Hoàn thành</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Chưa xử lí</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Hoàn Thành</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Chưa xử lí</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+                </div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+</body>
+</html>
